@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { getMenuItems, getCategories } from "@/lib/api";
-import { getStoryblokApi } from "@/lib/storyblok";
+
 import type { MenuItem, Category } from "@/lib/types";
 import MenuItemCard from "@/components/MenuItemCard";
 import { useCart } from "@/contexts/CartContext";
