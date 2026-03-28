@@ -1,6 +1,6 @@
 import type { MenuItem, Category, CartItem, Order, Reservation } from "./types";
 
-const API_URL = "http://localhost:3001";
+const API_URL = "https://new-restarant.onrender.com/";
 
 function getAuthHeaders(
   tokenType: "admin" | "customer" = "admin",
