@@ -7,7 +7,6 @@ export interface MenuItem {
   image: string;
   availability: boolean;
 }
-export { MenuItem, Category, CartItem, Order, Reservation } from "@/lib/api";
 
 export interface Category {
   id: number;
