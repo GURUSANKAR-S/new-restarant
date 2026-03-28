@@ -5,7 +5,7 @@
     "description": "Grilled bread topped with fresh tomatoes, garlic, basil, and extra virgin olive oil",
     "price": 250,
     "categoryId": 1,
-  "image":"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80"
+    "image": "/images/bruschetta.svg",
     "availability": true
   },
   {
@@ -14,7 +14,7 @@
     "description": "Jumbo mushroom caps filled with breadcrumbs, parmesan, herbs, and garlic butter",
     "price": 280,
     "categoryId": 1,
-  "image":"/images/stuffed-mushrooms.svg"
+    "image": "/images/stuffed-mushrooms.svg",
     "availability": true
   },
   {
@@ -50,7 +50,7 @@
     "description": "Fresh Atlantic salmon grilled with lemon-dill butter, asparagus spears",
     "price": 650,
     "categoryId": 2,
-    "image": "https://images.unsplash.com/photo-1604908177225-5403a0bcb7f1?auto=format&fit=crop&w=500&q=80",
+    "image": "https://images.unsplash.com/photo-1604908177522-402c9c9d4e2c?auto=format&fit=crop&w=500&q=80",
     "availability": true
   },
   {

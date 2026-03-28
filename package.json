@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@storyblok/react": "^6.1.0",
     "@tanstack/react-table": "^8.21.3"
   }
 }
