@@ -1,5 +1,7 @@
 import type { MenuItem, Category, CartItem, Order, Reservation } from "./types";
 
+export * from "./types";
+
 const API_URL = "https://new-restarant.onrender.com/";
 
 function getAuthHeaders(
