@@ -1,1 +1,1 @@
-# Storyblok Integration Completion Plan&#10;&#10;## Steps:&#10;1. [ ] Create missing Storyblok files (lib/storyblok.ts, components/storyblok/\*, components/StoryblokProvider.tsx)&#10;2. [ ] Update layout.tsx with StoryblokProvider&#10;3. [ ] Update menu/page.tsx to use Storyblok fetch for menu data&#10;4. [ ] Test `npm run dev` in frontend&#10;5. [ ] Migrate data to Storyblok dashboard&#10;&#10;Current progress from frontend/TODO.md incorporated. Proceeding step-by-step."
+
