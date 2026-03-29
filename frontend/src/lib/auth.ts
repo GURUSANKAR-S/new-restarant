@@ -1,6 +1,6 @@
 import type { User } from "./types";
 
-const API_URL = "https://new-restarant.onrender.com/";
+const API_URL = "http://localhost:3001";
 
 export async function loginAdmin(
   email: string,
