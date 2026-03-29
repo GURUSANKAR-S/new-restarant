@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   MenuItem,
-  Category, // ✅ added
+  Category,
   getMenuItems,
   deleteMenuItem,
   getCategories,
@@ -13,7 +13,7 @@ import { getCurrentUser } from "@/lib/auth";
 
 const AdminMenuPage = () => {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]); // ✅ FIXED
+  const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const router = useRouter();
@@ -27,10 +27,13 @@ const AdminMenuPage = () => {
       }
 
       try {
-        const [items, cats] = await Promise.all([
-          getMenuItems(),
-          getCategories(),
-        ]);
+        // ✅ FIXED: Explicit tuple typing
+        const [items, cats]: [MenuItem[], Category[]] =
+          await Promise.all([
+            getMenuItems(),
+            getCategories(),
+          ]);
+
         setMenuItems(items);
         setCategories(cats);
       } catch (error) {
@@ -60,9 +63,8 @@ const AdminMenuPage = () => {
     }
   };
 
-  // ✅ FIXED typing
   const getCategoryName = (categoryId: number): string => {
-    const cat = categories.find((c: Category) => c.id === categoryId);
+    const cat = categories.find((c) => c.id === categoryId);
     return cat ? cat.name : "Uncategorized";
   };
 
@@ -155,9 +157,7 @@ const AdminMenuPage = () => {
           </div>
         </div>
 
-        {/* TABLE (unchanged UI) */}
-        {/* Your table code stays same — no issues there */}
-
+        {/* Your table UI remains unchanged */}
       </div>
     </div>
   );
