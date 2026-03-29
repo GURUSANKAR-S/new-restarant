@@ -2,13 +2,7 @@ import type { MenuItem, Category, CartItem, Order, Reservation } from "./types";
 
 export * from "./types";
 
-const API_URL = "https://new-restarant.onrender.com/";
->>>>>>> 16b75b53c64bccef0d1b2c2a27b8ab8a92c78105
-=======
-const API_URL = "https://new-restarant.onrender.com/";
-=======
-const API_URL = "https://new-restarant.onrender.com/";
->>>>>>> 16b75b53c64bccef0d1b2c2a27b8ab8a92c78105
+const API_URL = "http://localhost:3001";
 
 function getAuthHeaders(
   tokenType: "admin" | "customer" = "admin",
@@ -33,7 +27,7 @@ export async function getMenuItems(): Promise<MenuItem[]> {
     throw new Error("Failed to fetch menu items");
   }
 
-  const data: MenuItem[] = await res.json(); 
+  const data: MenuItem[] = await res.json();
   return data;
 }
 
@@ -46,7 +40,7 @@ export async function getMenuItem(id: number): Promise<MenuItem> {
     throw new Error("Failed to fetch menu item");
   }
 
-  const data: MenuItem = await res.json(); 
+  const data: MenuItem = await res.json();
   return data;
 }
 
@@ -62,7 +56,7 @@ export async function createMenuItem(formData: FormData): Promise<MenuItem> {
     throw new Error(error.message || "Failed to create menu item");
   }
 
-  const data: MenuItem = await res.json(); 
+  const data: MenuItem = await res.json();
   return data;
 }
 
@@ -81,7 +75,7 @@ export async function updateMenuItem(
     throw new Error(error.message || "Failed to update menu item");
   }
 
-  const data: MenuItem = await res.json(); 
+  const data: MenuItem = await res.json();
   return data;
 }
 
@@ -106,7 +100,7 @@ export async function getCategories(): Promise<Category[]> {
     throw new Error("Failed to fetch categories");
   }
 
-  const data: Category[] = await res.json(); 
+  const data: Category[] = await res.json();
   return data;
 }
 
@@ -134,7 +128,7 @@ export async function createOrder(orderData: {
     throw new Error("Failed to create order");
   }
 
-  const data: Order = await res.json(); 
+  const data: Order = await res.json();
   return data;
 }
 
@@ -145,7 +139,7 @@ export async function getOrders(): Promise<Order[]> {
 
   if (!res.ok) throw new Error("Failed to fetch orders");
 
-  const data: Order[] = await res.json(); 
+  const data: Order[] = await res.json();
   return data;
 }
 
@@ -214,6 +208,6 @@ export async function getReservation(id: number): Promise<Reservation> {
 
   if (!res.ok) throw new Error("Failed to fetch reservation");
 
-  const data: Reservation = await res.json(); 
+  const data: Reservation = await res.json();
   return data;
 }

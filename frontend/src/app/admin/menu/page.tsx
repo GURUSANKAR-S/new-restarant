@@ -27,10 +27,10 @@ const AdminMenuPage = () => {
       }
 
       try {
-        const [items, cats] = await Promise.all<[MenuItem[], Category[]]>([
+        const [items, cats] = (await Promise.all([
           getMenuItems(),
           getCategories(),
-        ]);
+        ] as const)) as [MenuItem[], Category[]];
 
         setMenuItems(items);
         setCategories(cats);
@@ -131,9 +131,7 @@ const AdminMenuPage = () => {
             <div className="text-4xl font-bold text-teal-600 mb-2">
               {menuItems.filter((i) => i.availability).length}
             </div>
-            <div className="text-lg font-semibold text-gray-700">
-              Available
-            </div>
+            <div className="text-lg font-semibold text-gray-700">Available</div>
           </div>
 
           <div className="bg-white/90 rounded-2xl p-8 shadow-xl">
