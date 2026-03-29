@@ -14,6 +14,7 @@ export default function Menu() {
   const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
+
   const { addItem } = useCart();
 
   useEffect(() => {
@@ -31,6 +32,7 @@ export default function Menu() {
         setLoading(false);
       }
     };
+
     fetchData();
   }, []);
 
@@ -38,9 +40,11 @@ export default function Menu() {
     const matchesSearch =
       item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase());
+
     const matchesCategory = selectedCategory
       ? item.categoryId === selectedCategory
       : true;
+
     return matchesSearch && matchesCategory && item.availability;
   });
 
@@ -98,6 +102,7 @@ export default function Menu() {
             >
               All Dishes
             </button>
+
             {categories.map((category) => (
               <button
                 key={category.id}
