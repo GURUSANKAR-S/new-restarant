@@ -27,12 +27,10 @@ const AdminMenuPage = () => {
       }
 
       try {
-        // ✅ FIXED: Explicit tuple typing
-        const [items, cats]: [MenuItem[], Category[]] =
-          await Promise.all([
-            getMenuItems(),
-            getCategories(),
-          ]);
+        const [items, cats] = await Promise.all<[MenuItem[], Category[]]>([
+          getMenuItems(),
+          getCategories(),
+        ]);
 
         setMenuItems(items);
         setCategories(cats);
